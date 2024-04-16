@@ -53,4 +53,24 @@ cmake ..
 make -j
 ```
 
+# Downloading the datasets
+## Human genomes
+```
+curl --cookie zenodo-cookies.txt "https://zenodo.org/records/7506049/files/human-dataset-part1.tar.xz?download=1" --output human_genomes1.tar.xz
+curl --cookie zenodo-cookies.txt "https://zenodo.org/records/7506425/files/human-dataset-part2.tar.xz?download=1" --output human_genomes2.tar.xz
+mkdir human_genomes
+```
+Then extract the files:
 
+```
+tar -xf human_genomes1.tar.xz -C human_genomes
+tar -xf human_genomes2.tar.xz -C human_genomes
+rm human_genomes1.tar.xz
+rm human_genomes2.tar.xz
+```
+The fasta files are in the human_genomes directory
+## E. coli genomes
+```
+mkdir ecoli
+bash ecoli_downloads.sh
+```
