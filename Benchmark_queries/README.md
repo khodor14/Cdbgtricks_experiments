@@ -1,6 +1,6 @@
 # Query experiments
 ## General set up
-Cdbtricks and Fulgor use temporary files during the creation of indices. So it is necessay to increase the number of files that can be opened simultaneously.
+Cdbgtricks and Fulgor use temporary files during the creation of indices. So it is necessay to increase the number of files that can be opened simultaneously.
 ```
 ulimit -n 2048
 ```
@@ -27,13 +27,13 @@ Bifrost build -r ecoli_genomes.txt -k 31 -t 32 -o ecoli_graph -f -n
 The output will be written to ecoli_graph.fasta. The index of the graph is written to ecoli_graph.bfi.
 ## Indexing the graphs with Cdbgtricks
 ```
-(time ./script.sh path/to/Cdbtricks_binary index -ig human_graph.fasta -k 31 -m 9 -s 5000 -msb 1 -it -o human_cdbftricks) |& tee human_cdbgtricks_build_index.txt
+(time ./script.sh path/to/Cdbgtricks_binary index -ig human_graph.fasta -k 31 -m 9 -s 5000 -msb 1 -it -o human_cdbgtricks) |& tee human_cdbgtricks_build_index.txt
 ```
-The output is written to human_cdbftricks_index.bin
+The output is written to human_cdbgtricks_index.bin
 ```
-(time ./script.sh path/to/Cdbtricks_binary index -ig ecoli_graph.fasta -k 31 -m 9 -s 5000 -msb 1 -it -o ecoli_cdbftricks) |& tee ecoli_cdbgtricks_build_index.txt
+(time ./script.sh path/to/Cdbgtricks_binary index -ig ecoli_graph.fasta -k 31 -m 9 -s 5000 -msb 1 -it -o ecoli_cdbgtricks) |& tee ecoli_cdbgtricks_build_index.txt
 ```
-The output is written to ecoli_cdbftricks_index.bin
+The output is written to ecoli_cdbgtricks_index.bin
 ## Creating Fulgor indices
 ```
 (time ./script.sh path/to/Fulgor_binary build -l human_10_genomes.txt -k 31 -m 9 -o human_index )|& tee human_fulgor_build.txt"
@@ -61,11 +61,11 @@ The output is written to human_random_bifrost.tsv. The memory, disk and time are
 The output is written to ecoli_random_bifrost.tsv. The memory, disk and time are written to ecoli_random_bifrost_query.txt.
 ### Query with Cdbgtricks
 ```
-( time ./script.sh path/to/Cdbtricks_binary query -ig humam_graph.fasta -k 31 -it -li human_cdbftricks_build_index.bin -qr random_queries.fasta -r 1 -o human_random_cdbgtricks)|& tee human_random_cdbgtricks.txt
+( time ./script.sh path/to/Cdbgtricks_binary query -ig humam_graph.fasta -k 31 -it -li human_cdbgtricks_build_index.bin -qr random_queries.fasta -r 1 -o human_random_cdbgtricks)|& tee human_random_cdbgtricks.txt
 ```
 The output is written to human_random_cdbgtricks.tsv. The memory, disk and time are written to human_random_cdbgtricks.txt
 ```
-( time ./script.sh path/to/Cdbtricks_binary query -ig ecoli_graph.fasta -k 31 -it -li ecoli_cdbftricks_index.bin -qr random_queries.fasta -r 1 -o ecoli_random_cdbgtricks)|& tee ecoli_random_cdbgtricks.txt
+( time ./script.sh path/to/Cdbgtricks_binary query -ig ecoli_graph.fasta -k 31 -it -li ecoli_cdbgtricks_index.bin -qr random_queries.fasta -r 1 -o ecoli_random_cdbgtricks)|& tee ecoli_random_cdbgtricks.txt
 ```
 The outputs is written to ecoli_random_cdbgtricks.tsv. The memory, disk and time are written to ecoli_random_cdbgtricks.txt
 ### Query with Fulgor
@@ -100,11 +100,11 @@ The output is written to human_positive_bifrost.tsv. The memory, disk and time a
 The output is written to ecoli_positive_bifrost.tsv. The memory, disk and time are written to ecoli_positive_bifrost_query.txt.
 ### Query with Cdbgtricks
 ```
-( time ./script.sh path/to/Cdbtricks_binary query -ig humam_graph.fasta -k 31 -it -li human_cdbftricks_build_index.bin -qr positive_queries_human.fasta -r 1 -o human_positive_cdbgtricks)|& tee human_positive_cdbgtricks.txt
+( time ./script.sh path/to/Cdbgtricks_binary query -ig humam_graph.fasta -k 31 -it -li human_cdbgtricks_build_index.bin -qr positive_queries_human.fasta -r 1 -o human_positive_cdbgtricks)|& tee human_positive_cdbgtricks.txt
 ```
 The output is written to human_positive_cdbgtricks.tsv. The memory, disk and time are written to human_positive_cdbgtricks.txt
 ```
-( time ./script.sh path/to/Cdbtricks_binary query -ig ecoli_graph.fasta -k 31 -it -li ecoli_cdbftricks_index.bin -qr positive_queries_ecoli.fasta -r 1 -o ecoli_positive_cdbgtricks)|& tee ecoli_positive_cdbgtricks.txt
+( time ./script.sh path/to/Cdbgtricks_binary query -ig ecoli_graph.fasta -k 31 -it -li ecoli_cdbgtricks_index.bin -qr positive_queries_ecoli.fasta -r 1 -o ecoli_positive_cdbgtricks)|& tee ecoli_positive_cdbgtricks.txt
 ```
 The outputs is written to ecoli_positive_cdbgtricks.tsv. The memory, disk and time are written to ecoli_positive_cdbgtricks.txt
 ### Query with Fulgor
