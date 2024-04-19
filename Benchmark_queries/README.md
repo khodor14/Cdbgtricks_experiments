@@ -5,11 +5,9 @@ Cdbgtricks and Fulgor use temporary files during the creation of indices. So it 
 ulimit -n 2048
 ```
 ## Construction of graphs
-### Prepare fof.txt for human genomes
+### Prepare fof.txt for 10 human genomes
 ```
-find human_genomes/*.fa > human_genomes.txt
-head -10 human_genomes.txt > human_10_genomes.txt
-rm human_genomes.txt
+find human_genomes/*.fa | head -10 > human_10_genomes.txt
 ```
 ### Construct a Cdbg for human genomes with Bifrost
 ```
