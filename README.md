@@ -3,8 +3,8 @@
 
 ## Cdbtricks
   ```
-  git clone --recursive https://github.com/khodor14/ccdbgUpdater.git
-  cd ccdbgUpdater && mkdir build && cd build
+  git clone --recursive https://github.com/khodor14/Cdbgtricks.git
+  cd Cdbgtricks && mkdir build && cd build
   cmake -S ../ -B .
   make
   ```
