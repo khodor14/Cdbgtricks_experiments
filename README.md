@@ -1,7 +1,7 @@
 # Cdbtricks_experiments
 # Tool installation
 
-## Cdbtricks
+## Cdbgtricks
 Refer to [Cdbgtricks](https://github.com/khodor14/Cdbgtricks) repository for details on how to install it. 
 ## Bifrost
   ```
