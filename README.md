@@ -2,7 +2,7 @@
 # Tool installation
 
 ## Cdbtricks
-Refer to [Cdbtricks](https://github.com/khodor14/Cdbgtricks) repository for details on how to install it. 
+Refer to [Cdbgtricks](https://github.com/khodor14/Cdbgtricks) repository for details on how to install it. 
 ## Bifrost
   ```
   conda install -c bioconda bifrost
